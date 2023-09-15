@@ -12,7 +12,7 @@ const brand =ref('🏛️ Company Directory')
             <div class="menu">
                 <a href="#" class="menu-item">Departments</a>
                 <a href="#" class="menu-item">Settings</a>
-                <a href="#" class="menu-item">Logout</a>
+                <a href="#" class="menu-login">Logout</a>
             </div>
         </div>
     </nav>
@@ -30,6 +30,12 @@ const brand =ref('🏛️ Company Directory')
             }
             .menu {
                 @apply flex gap-2;
+                &-item{
+                    @apply rounded-md px-4 py-2 hover:bg-yellow-500 hover:text-slate-900;
+                }
+                &-login{
+                    @apply rounded-md bg-red-900 px-4 py-2 hover:bg-yellow-500 hover:text-slate-900;
+                }
             }
         }
     }
