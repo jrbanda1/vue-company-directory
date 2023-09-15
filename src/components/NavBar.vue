@@ -20,9 +20,17 @@ const brand =ref('🏛️ Company Directory')
 
 <style scoped lang="postcss">
     nav{
-        @apply h-20 bg-slate-900 text-slate-200;
+        @apply flex h-20 bg-slate-900 text-slate-200;
         .wrapper{
-            @apply flex justify-between items-center;
+            @apply container mx-auto flex w-full items-center justify-between;
+            .brand{
+                &-title{
+                    @apply text-2xl font-bold text-yellow-500;
+                }
+            }
+            .menu {
+                @apply flex gap-2;
+            }
         }
     }
 </style>
