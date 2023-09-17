@@ -1,8 +1,14 @@
 <script setup>
 import { faker } from '@faker-js/faker'
+const firstName = faker.name.firstName()
+const lastName = faker.name.lastName()
+const fullName = firstName +' ' + lastName;
 </script>
 
 <template>
-    <img :src="faker.internet.avatar()" alt="" srcset="" />
-    <span class="bg-red-500">{{}}</span>
+    <div class="card">
+        <img :src="faker.internet.avatar()" alt="" srcset="" />
+        <p class="">{{ fullName }}</p>
+        <p class="">{{ faker.internet.exampleEmail(firstName, lastName) }}</p>
+    </div>
 </template>
