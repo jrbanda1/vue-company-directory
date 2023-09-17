@@ -1,3 +1,8 @@
+<script setup>
+import { faker } from '@faker-js/faker'
+</script>
+
 <template>
-    <span class="bg-red-500">I'm a card</span>
+    <img :src="faker.internet.avatar()" alt="" srcset="" />
+    <span class="bg-red-500">{{}}</span>
 </template>
