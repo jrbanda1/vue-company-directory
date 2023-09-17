@@ -26,6 +26,15 @@ const selectCard = () => {
 
 <style scoped lang="postcss">
 .card{
-    @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 shadow-md hover:scale-110 transition-transform duration-500 hover:shadow-slate-700 hover:hover:shadow-2xl;
+    @apply cursor-pointer overflow-hidden rounded-md bg-slate-100 p-8 
+    shadow-md hover:scale-110 
+    transition-transform duration-500 hover:shadow-slate-700 
+    hover:shadow-2xl;
+    &-image{
+        img{
+             @apply mx-auto rounded-full object-contain
+        }
+       
+    }
 }
 </style>
