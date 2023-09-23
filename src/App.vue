@@ -2,12 +2,7 @@
 import NavBar from '@/components/NavBar.vue'
 import MainPage from '@/components/MainPage.vue'
 
-import { ref, onMounted } from 'vue'
-const showMainPage = ref(true)
 
-onMounted(() => {
-  window.location.pathname === '/' ? showMainPage.value = true : (showMainPage.value = false)
- })
 </script>
 
 <template>
