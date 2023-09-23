@@ -1,10 +1,10 @@
 <script setup>
-import mainCardSingle from './mainCardSingle.vue';
+import mainCardSingle from '@/components/mainCardSingle.vue';
 </script>
 
 <template>
     <div class="sub-wrapper">
-        <mainCardSingle v-for="n in 20"/>
+        <mainCardSingle v-for="n in 20" :key="n" />
     </div>
     
 </template>
