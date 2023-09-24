@@ -1,21 +1,26 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router';
+
 import { useAuth } from '@/components/composables/useAuth';
-
-import { useRouter } from 'vue-router';
-
 const { login, logout } = useAuth()
+
 const router = useRouter()
+const route = useRoute()
 
 const username = ref('')
 const password = ref('')
 
 const logUserIn = () => {
     if (login(username.value, password.value)) {
-        router.push({ name: 'Home' })
-    }else {
+        if (route.query.redirect) {
+            route.push(router.query.redirect)
+        } else {
+            router.push({ name: 'Home' })
+        }
+    } else {
         logout()
-    }    
+    }
 }
 </script>
 
