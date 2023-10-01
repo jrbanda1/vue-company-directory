@@ -1,5 +1,5 @@
 import router from '@/router'
-import { firebase } from '@/components/composables/useFirebase'
+import { firebaseApp } from '@/components/composables/useFirebase'
 
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { useAuth as firebaseAuth } from '@vueuse/firebase/useAuth'
