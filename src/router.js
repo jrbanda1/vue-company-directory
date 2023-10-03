@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAuth } from '@/components/composables/useAuth'
+import { useAuth } from '@/composables/useAuth'
 
 const { isAuthenticated } = useAuth()
 
@@ -9,7 +9,7 @@ import SettingsPage from '@/components/SettingsPage.vue'
 import NotFound from '@/components/NotFound.vue'
 
 const routes = [
-  { path: '/vue-company-directory', name: 'Home', component: MainPage },
+  { path: '/vue-company-directory/', name: 'Home', component: MainPage },
   { path: '/login', name: 'Login', component: Login },
   { path: '/settings', name: 'Settings', component: SettingsPage, meta: { requiresAuth: true } },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
@@ -20,9 +20,8 @@ const router = createRouter({
   routes,
 })
 
-router.beforeEach((to, _, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated.value)
-    next({ name: 'Login', query: { redirect: to.fullPath } })
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
   else next()
 })
 

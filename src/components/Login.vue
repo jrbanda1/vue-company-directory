@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router';
 
-import { useAuth } from '@/components/composables/useAuth';
+import { useAuth } from '@/composables/useAuth';
 const { login, logout } = useAuth()
 
 const router = useRouter()
